@@ -1,0 +1,24 @@
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using GearGo_Equipment_Rental.Models;
+
+namespace GearGo_Equipment_Rental.Controllers;
+
+public class equipmentController : Controller
+{
+    public IActionResult Index()
+    {
+        return View();
+    }
+
+    public IActionResult Details()
+    {
+        return View();
+    }
+    /*This  will show when there is an error*/
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+}

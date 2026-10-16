@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Register the application's DbContext. The concrete type is GearGoDBContext (note the capital "DB").
+builder.Services
+    .AddDbContext<GearGoDBContext>(o =>
+        o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
 var app = builder.Build();
 

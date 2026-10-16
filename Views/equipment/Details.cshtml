@@ -1,8 +1,19 @@
-﻿@{
+﻿@model Equipment
+
+@{
     ViewData["Title"] = "equipment Details";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Equipment Details Page</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">@Model.Name</h1>
+    <p>@Model.Description</p>
+    <hr>
+    <ul>
+        <li>Daily Rate: $@Model.DailyRate</li>
+        <li>Category: @Model.Category</li>
+        <li>Availability: @Model.Availability</li>
+    </ul>
+
+
 </div>
+

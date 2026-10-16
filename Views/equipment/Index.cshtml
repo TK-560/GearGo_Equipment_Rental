@@ -1,8 +1,24 @@
-﻿@{
-    ViewData["Title"] = "equipment";
+﻿@model List<Equipment>
+ 
+@{
+    ViewData["Title"] = "Equipment";
 }
-
+ 
 <div class="text-center">
-    <h1 class="display-4">Equipment index Page</h1>
+    <h1 class="display-4">Equipment Index Page</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+ 
+ 
+    @foreach (var item in Model)
+    {
+        <li>
+            <a asp-controller="Equipment" asp-action="Details" asp-route-id="@item.Id">@item.Name</a>
+        </li>
+    }
+
+@*ASP.NET documentation | Microsoft Learn
+Learn to use ASP.NET Core to create web apps and services that are fast, secure, cross-platform, and cloud-based. Browse tutorials, sample code, fundamentals, API reference and more.
+*@
+
+ 

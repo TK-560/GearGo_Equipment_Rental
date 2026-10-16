@@ -1,11 +1,14 @@
 ﻿using System;
 
-public class equipment
+public class Equipment
 {
-	public int id { get; set; }
-    public string name { get; set; }
-    public string description { get; set; }
-    public bool isAvailable { get; set; }
+	public int Id { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public bool IsAvailable { get; set; }
     public double DailyRate { get; set; } = 0;
-    public equipment(){}
+    public string Category { get; set; }    
+    public bool Availability { get; set; }
+    public Equipment(){}
+
 }
